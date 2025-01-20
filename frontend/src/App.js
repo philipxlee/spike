@@ -1,20 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import CirclesPage from './CirclesPage';
+import TrianglesPage from './TrianglesPage';
 
 function App() {
-    const [message, setMessage] = useState('');
-
-    useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/hello/') // Backend API endpoint
-            .then(response => setMessage(response.data.message))
-            .catch(error => console.error('Error fetching data:', error));
-    }, []);
-
-    return (
-        <div style={{ textAlign: 'center', marginTop: '50px' }}>
-            <h1>{message || 'Loading...'}</h1>
-        </div>
-    );
+  return (
+    <Router>
+      <Routes>
+        {/* Root path shows the circles page */}
+        <Route path="/" element={<CirclesPage />} />
+        {/* /triangles shows the triangles page */}
+        <Route path="/triangles" element={<TrianglesPage />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
