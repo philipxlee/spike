@@ -1,0 +1,94 @@
+# General macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS Thumbnails
+._*
+
+# macOS Files for storage
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.applediskimage
+.apdisk
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.pyo
+*.pyd
+venv/
+env/
+ENV/
+*.env
+*.env.*
+Pipfile.lock
+poetry.lock
+
+# Django
+db.sqlite3
+*.log
+*.pot
+*.pyc
+*.pyo
+local_settings.py
+media/
+staticfiles/
+*.migrations/
+
+# React
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.env.local
+.env.development
+.env.production
+.env.test
+.env.*
+
+# Logs
+*.log
+*.out
+*.err
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# Test-related
+.tox/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.hypothesis/
+
+# IDEs and editors
+.vscode/
+*.swp
+*.swo
+*.swn
+*.sublime-project
+*.sublime-workspace
+
+# Other
+debug.log
+*.orig
