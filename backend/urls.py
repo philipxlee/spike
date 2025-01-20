@@ -1,5 +1,5 @@
 """
-URL configuration for spike project.
+URL configuration for temp project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -15,9 +15,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
+from django.http import HttpResponse
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+
+def home(request):
+    return HttpResponse("Welcome to the home page!")
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("", home, name="home"),
+    path('api/', include('api.urls')),
 ]
