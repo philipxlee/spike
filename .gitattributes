@@ -1,0 +1,63 @@
+# Auto-detect text files and perform LF normalization
+* text=auto
+
+###############################################################################
+# Shell Scripts
+###############################################################################
+# Ensure shell scripts have LF endings
+*.sh text eol=lf
+
+###############################################################################
+# Node / React Files
+###############################################################################
+# JavaScript and JSX files (React components)
+*.js     text
+*.jsx    text
+*.ts     text
+*.tsx    text
+
+###############################################################################
+# Python Files
+###############################################################################
+# Django and other Python source files
+*.py     text
+
+# For Django migrations files, continue to treat as text
+**/migrations/*.py text
+
+###############################################################################
+# HTML, CSS and Other Frontend Assets
+###############################################################################
+*.html   text
+*.css    text
+*.scss  text
+
+###############################################################################
+# Markdown / Documentation
+###############################################################################
+*.md     text
+
+###############################################################################
+# Images and Fonts (Binary files)
+###############################################################################
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.ico    binary
+*.svg    binary
+*.webp   binary
+
+# Font Files
+*.woff   binary
+*.woff2  binary
+*.ttf    binary
+*.otf    binary
+
+###############################################################################
+# Other Binary Files
+###############################################################################
+*.pdf    binary
+*.zip    binary
+*.tar    binary
+*.gz     binary
