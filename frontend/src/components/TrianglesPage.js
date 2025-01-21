@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
-import RoundedTriangle from './components/RoundedTriangle';
+import RoundedTriangle from '../helpers/RoundedTriangle';
+import { buttonStyle, buttonHoverStyle } from '../helpers/ButtonStyles';
 
-function TrianglesPage() {
+function TrianglesPage({ onGameFinish, resetGame }) {
   const [triangles, setTriangles] = useState([]);
   const [counter, setCounter] = useState(0);
   const [positions, setPositions] = useState([]);
@@ -17,8 +19,8 @@ function TrianglesPage() {
 
         // Generate random positions for each triangle.
         const newPositions = fetchedTriangles.map(() => ({
-          left: Math.random() * 90 + 'vw',              // between 0 and 90vw
-          top: (Math.random() * 60 + 20) + 'vh'         // between 20vh and 80vh
+          left: Math.random() * 90 + 'vw',      // between 0 and 90vw
+          top: (Math.random() * 60 + 20) + 'vh' // between 20vh and 80vh
         }));
         setPositions(newPositions);
       })
@@ -36,6 +38,13 @@ function TrianglesPage() {
     }
   };
 
+  // Signal game finish only if triangles have been fetched and the counter reaches 0.
+  useEffect(() => {
+    if (triangles.length > 0 && counter === 0 && typeof onGameFinish === 'function') {
+      onGameFinish();
+    }
+  }, [counter, onGameFinish, triangles]);
+
   return (
     <div style={{ position: 'relative', height: '100vh', overflow: 'hidden' }}>
       <h1 style={{ textAlign: 'center', marginTop: '20px' }}>Click all the triangles!</h1>
@@ -51,20 +60,30 @@ function TrianglesPage() {
             top: positions[index] ? positions[index].top : '0px',
             transition: 'transform 0.2s',
           }}
-          // Add hover effects: scale up on mouse over.
           onMouseOver={e => e.currentTarget.style.transform = 'scale(1.1)'}
           onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
         />
       ))}
       {counter === 0 && (
-        <h2 style={{
-          textAlign: 'center',
+        <div style={{
           position: 'absolute',
           bottom: '20px',
-          width: '100%'
+          left: '50%',
+          transform: 'translateX(-50%)',
+          textAlign: 'center'
         }}>
-          Well done! You clicked all the triangles!
-        </h2>
+          <h2>Well done! You clicked all the triangles!</h2>
+          <Link to="/">
+            <button
+              style={buttonStyle}
+              onClick={resetGame}
+              onMouseOver={e => Object.assign(e.target.style, buttonHoverStyle)}
+              onMouseOut={e => Object.assign(e.target.style, { backgroundColor: '#007BFF' })}
+            >
+              Play Again
+            </button>
+          </Link>
+        </div>
       )}
     </div>
   );
