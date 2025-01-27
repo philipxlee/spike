@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import StartingPage from './components/StartingPage';
 import CirclesPage from './components/CirclesPage';
 import TrianglesPage from './components/TrianglesPage';
+import SquaresPage from './components/SquaresPage';
 import TimerDisplay from './helpers/TimeDisplay';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         {/* Pass both resetGame and setGameStartTime to the starting page */}
         <Route path="/" element={<StartingPage setGameStartTime={setGameStartTime} resetGame={resetGame} />} />
         <Route path="/circles" element={<CirclesPage />} />
+        <Route path="/squares" element={<SquaresPage />} />
         <Route path="/triangles" element={<TrianglesPage onGameFinish={handleGameFinish} resetGame={resetGame} />} />
       </Routes>
     </Router>

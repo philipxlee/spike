@@ -16,3 +16,7 @@ def get_triangle_state(request):
         return JsonResponse({'triangles': [False, False, False, False, False]})
     return JsonResponse({'error': 'Invalid request method'}, status=400)
 
+def get_square_state(request):
+    if request.method == 'GET':
+        return JsonResponse({'squares': [False, False, False, False, False]})
+    return JsonResponse({'error': 'Invalid request method'}, status=400)

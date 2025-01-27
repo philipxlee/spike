@@ -72,7 +72,7 @@ function CirclesPage() {
       {counter === 0 && (
         <div>
           <h2>Well done! You clicked all the circles!</h2>
-          <Link to="/triangles">
+          <Link to="/squares">
             <button
               style={buttonStyle}
               onMouseOver={e => Object.assign(e.target.style, buttonHoverStyle)}

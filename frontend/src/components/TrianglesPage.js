@@ -17,12 +17,11 @@ function TrianglesPage({ onGameFinish, resetGame }) {
         setTriangles(fetchedTriangles);
         setCounter(fetchedTriangles.length);
 
-        // Generate random positions for each triangle.
-        const newPositions = fetchedTriangles.map(() => ({
-          left: Math.random() * 90 + 'vw',      // between 0 and 90vw
-          top: (Math.random() * 60 + 20) + 'vh' // between 20vh and 80vh
+        const initialPositions = fetchedTriangles.map(() => ({
+          left: Math.random() * 90 + 'vw',
+          top: (Math.random() * 60 + 20) + 'vh'
         }));
-        setPositions(newPositions);
+        setPositions(initialPositions);
       })
       .catch(error => {
         console.error('Error fetching triangle data:', error);
@@ -33,12 +32,24 @@ function TrianglesPage({ onGameFinish, resetGame }) {
     if (!triangles[index]) {
       const updatedTriangles = [...triangles];
       updatedTriangles[index] = true;
+
+      // Generate new positions for all unclicked triangles
+      const newPositions = positions.map((pos, i) => {
+        if (updatedTriangles[i]) {
+          return pos; // Keep clicked triangles' positions
+        }
+        return {
+          left: Math.random() * 90 + 'vw',
+          top: (Math.random() * 60 + 20) + 'vh'
+        };
+      });
+
       setTriangles(updatedTriangles);
       setCounter(counter - 1);
+      setPositions(newPositions);
     }
   };
 
-  // Signal game finish only if triangles have been fetched and the counter reaches 0.
   useEffect(() => {
     if (triangles.length > 0 && counter === 0 && typeof onGameFinish === 'function') {
       onGameFinish();
@@ -56,9 +67,9 @@ function TrianglesPage({ onGameFinish, resetGame }) {
           onClick={() => handleClick(index)}
           style={{
             position: 'absolute',
-            left: positions[index] ? positions[index].left : '0px',
-            top: positions[index] ? positions[index].top : '0px',
-            transition: 'transform 0.2s',
+            left: positions[index]?.left || '0px',
+            top: positions[index]?.top || '0px',
+            transition: 'all 0.5s ease-out',
           }}
           onMouseOver={e => e.currentTarget.style.transform = 'scale(1.1)'}
           onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
