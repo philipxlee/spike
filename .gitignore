@@ -50,6 +50,7 @@ local_settings.py
 media/
 staticfiles/
 *.migrations/
+config.json
 
 # React
 node_modules/
@@ -93,3 +94,4 @@ coverage.xml
 debug.log
 *.orig
 config.json
+.config.json
