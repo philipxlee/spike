@@ -11,15 +11,15 @@
     "model": "api.shape",
     "pk": 2,
     "fields": {
-      "shape_type": "circle",
-      "is_active": true
+      "shape_type": "squares",
+      "is_active": false
     }
   },
   {
     "model": "api.shape",
     "pk": 3,
     "fields": {
-      "shape_type": "square",
+      "shape_type": "triangles",
       "is_active": false
     }
   }
