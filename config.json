@@ -1,9 +1,0 @@
-{
-  "SECRET_KEY": "django-insecure-4sq3bj1sw18zfo*nsc03b7589ubvkbi^&1%*2524g(tv98w0eh",
-  "DATABASE_NAME": "Shapes",
-  "DATABASE_USER": "philip",
-  "DATABASE_PASSWORD": "philiplee",
-  "DATABASE_HOST": "localhost",
-  "DATABASE_PORT": 5432,
-  "DEBUG": true
-}
