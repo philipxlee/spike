@@ -1,0 +1,26 @@
+[
+  {
+    "model": "api.shape",
+    "pk": 1,
+    "fields": {
+      "shape_type": "circle",
+      "is_active": false
+    }
+  },
+  {
+    "model": "api.shape",
+    "pk": 2,
+    "fields": {
+      "shape_type": "circle",
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.shape",
+    "pk": 3,
+    "fields": {
+      "shape_type": "square",
+      "is_active": false
+    }
+  }
+]
