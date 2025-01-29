@@ -7,7 +7,7 @@ function CirclesPage() {
   const [counter, setCounter] = useState(0);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/circles/')
+    axios.get("https://spike-5ybw.onrender.com/api/circles/")
       .then(response => {
         console.log('API Response:', response.data);
         setCircles(response.data.circles);

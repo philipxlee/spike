@@ -10,7 +10,7 @@ function TrianglesPage({ onGameFinish, resetGame }) {
   const [positions, setPositions] = useState([]);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/triangles/')
+    axios.get("https://spike-5ybw.onrender.com/api/triangles/")
       .then(response => {
         console.log('Triangle API Response:', response.data);
         const fetchedTriangles = response.data.triangles;

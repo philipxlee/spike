@@ -7,7 +7,7 @@ function SquaresPage() {
   const [counter, setCounter] = useState(0);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/squares/')
+    axios.get("https://spike-5ybw.onrender.com/api/squares/")
       .then(response => {
         console.log('API Response:', response.data);
         setSquares(response.data.squares);

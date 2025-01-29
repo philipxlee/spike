@@ -11,7 +11,7 @@
     "model": "api.shape",
     "pk": 2,
     "fields": {
-      "shape_type": "squares",
+      "shape_type": "circle",
       "is_active": false
     }
   },
@@ -19,7 +19,107 @@
     "model": "api.shape",
     "pk": 3,
     "fields": {
-      "shape_type": "triangles",
+      "shape_type": "circle",
+      "is_active": false
+    }
+  },
+  {
+    "model": "api.shape",
+    "pk": 4,
+    "fields": {
+      "shape_type": "circle",
+      "is_active": false
+    }
+  },
+  {
+    "model": "api.shape",
+    "pk": 5,
+    "fields": {
+      "shape_type": "circle",
+      "is_active": false
+    }
+  },
+
+
+  {
+    "model": "api.shape",
+    "pk": 6,
+    "fields": {
+      "shape_type": "square",
+      "is_active": false
+    }
+  },
+  {
+    "model": "api.shape",
+    "pk": 7,
+    "fields": {
+      "shape_type": "square",
+      "is_active": false
+    }
+  },
+  {
+    "model": "api.shape",
+    "pk": 8,
+    "fields": {
+      "shape_type": "square",
+      "is_active": false
+    }
+  },
+  {
+    "model": "api.shape",
+    "pk": 9,
+    "fields": {
+      "shape_type": "square",
+      "is_active": false
+    }
+  },
+  {
+    "model": "api.shape",
+    "pk": 10,
+    "fields": {
+      "shape_type": "square",
+      "is_active": false
+    }
+  },
+
+
+  {
+    "model": "api.shape",
+    "pk": 11,
+    "fields": {
+      "shape_type": "triangle",
+      "is_active": false
+    }
+  },
+  {
+    "model": "api.shape",
+    "pk": 12,
+    "fields": {
+      "shape_type": "triangle",
+      "is_active": false
+    }
+  },
+  {
+    "model": "api.shape",
+    "pk": 13,
+    "fields": {
+      "shape_type": "triangle",
+      "is_active": false
+    }
+  },
+  {
+    "model": "api.shape",
+    "pk": 14,
+    "fields": {
+      "shape_type": "triangle",
+      "is_active": false
+    }
+  },
+  {
+    "model": "api.shape",
+    "pk": 15,
+    "fields": {
+      "shape_type": "triangle",
       "is_active": false
     }
   }
